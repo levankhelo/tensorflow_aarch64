@@ -23,11 +23,12 @@ jobs:
   Build_TF:
     name: 'Build wheel package'
     runs-on: ubuntu-latest
-    timeout-minutes: 2880 # 2 days
+    timeout-minutes: 2160 # 1.5 days
 
     steps:
     - id: tfVersion  # The step ID to refer to later.
       name: Get Tensorflow latest version tag
+      timeout-minutes: 1440
       uses: oprypin/find-latest-tag@v1
       with:
         repository: tensorflow/tensorflow  # The repository to scan.
