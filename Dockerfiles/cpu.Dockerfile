@@ -60,6 +60,12 @@ RUN python3 -m pip --no-cache-dir install --upgrade \
 # Some TF tools expect a "python" binary
 RUN ln -s $(which python3) /usr/local/bin/python
 
+# ---------------------------------- ADDED -----------------------------------
+# Allow wheel to work for h5py.whl
+RUN apt-get install pkg-config -y \
+    libhdf5-dev 
+# ------------------------------------ END -----------------------------------
+
 # --------------------------------- MODIFIED ---------------------------------
 # Options:
 #   tensorflow
